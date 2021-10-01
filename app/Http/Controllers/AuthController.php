@@ -27,7 +27,7 @@ class AuthController extends Controller
         $rules = [
             'email'                 => 'required|email',
             'password'              => 'required|string',
-            'no_telp'               => 'required|string'
+           
         ];
  
         $messages = [
@@ -46,6 +46,7 @@ class AuthController extends Controller
         $data = [
             'email'     => $request->input('email'),
             'password'  => $request->input('password'),
+            
         ];
  
         Auth::attempt($data);
@@ -97,6 +98,7 @@ class AuthController extends Controller
         $user->name = ucwords(strtolower($request->name));
         $user->email = strtolower($request->email);
         $user->password = Hash::make($request->password);
+        $user->no_telp =$request->no_telp;
         $user->email_verified_at = \Carbon\Carbon::now();
         $simpan = $user->save();
  

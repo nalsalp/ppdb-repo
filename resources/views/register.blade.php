@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for=""><strong>No Telp</strong></label>
-                        <input type="text" name="No Telp" class="form-control" placeholder="No Telp">
+                        <input type="text" name="no_telp" class="form-control" placeholder="No Telp">
                     </div>
                     <div class="form-group">
                         <label for=""><strong>Konfirmasi Password</strong></label>
