@@ -21,14 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 Route::get('/calonsiswa','CalonsiswaController@index')->name('calonsiswa.index');
 Route::get('/calonsiswa/create','CalonsiswaController@create')->name('calonsiswa.create');
 Route::post('/calonsiswa','CalonsiswaController@store')->name('calonsiswa.store');
-=======
- 
-
-Route::get('/', 'AuthController@showFormLogin')->name('login');
 Route::get('login', 'AuthController@showFormLogin')->name('login');
 Route::post('login', 'AuthController@login');
 Route::get('register', 'AuthController@showFormRegister')->name('register');
@@ -40,7 +35,3 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', 'AuthController@logout')->name('logout');
  
 });
-
-
->>>>>>> 8fa758f14e8e8b15ff05891f80b4fec728bc37fe
-
