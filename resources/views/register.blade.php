@@ -43,6 +43,10 @@
                         <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
+                        <label for=""><strong>No Telp</strong></label>
+                        <input type="text" name="No Telp" class="form-control" placeholder="No Telp">
+                    </div>
+                    <div class="form-group">
                         <label for=""><strong>Konfirmasi Password</strong></label>
                         <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
                     </div>
