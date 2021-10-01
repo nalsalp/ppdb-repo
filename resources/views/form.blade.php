@@ -42,25 +42,15 @@
                         <div class="form-group">
                              <label for="nama_pang">Nama panggilan</label>
                             <input
-                            class="form-control @error('nama') is-invalid @enderror"
-                            type="text" name="nama" id="nama" value="{{ old('nama') }}">
-                            @error('nama')
+                            class="form-control @error('nama_pang') is-invalid @enderror"
+                            type="text" name="nama_pang" id="nama_pang" value="{{ old('nama_pang') }}">
+                            @error('nama_pang')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
                              <label for="email">Email</label>
-                            <input
-                            class="form-control @error('nama_panggilan') is-invalid @enderror"
-                            type="text" name="nama_panggilan" id="nama_panggilan" value="{{ old('nama_panggilan') }}">
-                            @error('nama_panggilan')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                             <label for="jk">Jenis Kelamin</label>
                             <input
                             class="form-control @error('email') is-invalid @enderror"
                             type="text" name="email" id="email" value="{{ old('email') }}">
@@ -70,7 +60,7 @@
                         </div>
 
                         <div class="form-group">
-                             <label for="tempat_lahir">Tempat Lahir</label>
+                             <label for="jk">Jenis Kelamin</label>
                             <input
                             class="form-control @error('jk') is-invalid @enderror"
                             type="text" name="jk" id="jk" value="{{ old('jk') }}">
@@ -80,11 +70,21 @@
                         </div>
 
                         <div class="form-group">
+                             <label for="tempat_lahir">Tempat Lahir</label>
+                            <input
+                            class="form-control @error('jk') is-invalid @enderror"
+                            type="text" name="tempat_lahir" id="tempat_lahir" value="{{ old('tempat_lahir') }}">
+                            @error('tempat_lahir')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                              <label for="tanggal_lahir">Tanggal Lahir</label>
                             <input type="date"
-                            class="form-control @error('ttl') is-invalid @enderror"
-                            type="text" name="ttl" id="ttl" value="{{ old('ttl') }}">
-                            @error('ttl')
+                            class="form-control @error('tanggal_lahir') is-invalid @enderror"
+                            type="text" name="tanggal_lahir" id="tanggal_lahir" value="{{ old('tanggal_lahir') }}">
+                            @error('tanggal_lahir')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -92,9 +92,9 @@
                         <div class="form-group">
                              <label for="alamat_ktp">Alamat KTP</label>
                             <input
-                            class="form-control @error('alamat') is-invalid @enderror"
-                            type="text" name="alamat" id="alamat" value="{{ old('alamat') }}" cols="30" row="2">
-                            @error('alamat')
+                            class="form-control @error('alamat_ktp') is-invalid @enderror"
+                            type="text" name="alamat_ktp" id="alamat_ktp" value="{{ old('alamat_ktp') }}" cols="30" row="2">
+                            @error('alamat_ktp')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -102,9 +102,9 @@
                         <div class="form-group">
                              <label for="alamat_tinggal">Alamat Tinggal</label>
                             <input
-                            class="form-control @error('asal_sekolah') is-invalid @enderror"
-                            type="text" name="asal_sekolah" id="asal_sekolah" value="{{ old('asal_sekolah') }}">
-                            @error('asal_sekolah')
+                            class="form-control @error('alamat_tinggal') is-invalid @enderror"
+                            type="text" name="alamat_tinggal" id="alamat_tinggal" value="{{ old('alamat_tinggal') }}">
+                            @error('alamat_tinggal')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -112,45 +112,55 @@
                         <div class="form-group">
                              <label for="asal_sklh">Asal Sekolah</label>
                             <input
-                            class="form-control @error('nisn') is-invalid @enderror"
-                            type="text" name="nisn" id="nisn" value="{{ old('nisn') }}">
-                            @error('nisn')
+                            class="form-control @error('asal_sklh') is-invalid @enderror"
+                            type="text" name="asal_sklh" id="asal_sklh" value="{{ old('asal_sklh') }}">
+                            @error('asal_sklh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
                              <label for="j_1">Jurusan 1</label>
-                             <select class="form-control @error('jurusan1') is-invalid @enderror" name="jurusan1" id="jurusan1">
-                             <option value="{{ old('jurusan1') }}">{{ old('jurusan1') }}</option>
+                             <select class="form-control @error('j_1') is-invalid @enderror" name="j_1" id="j_1">
+                             <option value="{{ old('v') }}">{{ old('j_1') }}</option>
                                  <option value="TB">Tata Boga</option>
                                  <option value="MM">MultiMedia</option>
                                  <option value="RPL">Rekayasa Perangkat Lunak</option>
                                  <option value="BKP">Bisnis Kontruksi dan Properti</option>
                                  <option value="TKTO">Teknik Kendaraan Ringan Otomotif</option>
                              </select>
-                            @error('jurusan1')
+                            @error('j_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                             <label for="j_2">Jurusan 2</label>
-                             <select class="form-control @error('jurusan2') is-invalid @enderror" name="jurusan2" id="jurusan2">
-                             <option value="{{ old('jurusan2') }}">{{ old('jurusan2') }}</option>
+                             <label for="j_1">Jurusan 2</label>
+                             <select class="form-control @error('j_1') is-invalid @enderror" name="j_1" id="j_1">
+                             <option value="{{ old('j_1') }}">{{ old('j_1') }}</option>
                                  <option value="TB">Tata Boga</option>
                                  <option value="MM">MultiMedia</option>
                                  <option value="RPL">Rekayasa Perangkat Lunak</option>
                                  <option value="BKP">Bisnis Kontruksi dan Properti</option>
                                  <option value="TKTO">Teknik Kendaraan Ringan Otomotif</option>
                              </select>
-                            @error('jurusan2')
+                            @error('j_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                             <label for="ewarganegaraan">Kewarganegaraan</label>
+                             <label for="kewarganegaraan">Kewarganegaraan</label>
+                            <input
+                            class="form-control @error('kewarganegaraan') is-invalid @enderror"
+                            type="text" name="agama" id="agama" value="{{ old('kewarganegaraan') }}">
+                            @error('kewarganegaraan')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                             <label for="agama">Agama</label>
                             <input
                             class="form-control @error('agama') is-invalid @enderror"
                             type="text" name="agama" id="agama" value="{{ old('agama') }}">
@@ -160,27 +170,27 @@
                         </div>
 
                         <div class="form-group">
-                             <label for="agama">Agama</label>
-                            <input
-                            class="form-control @error('tinggi') is-invalid @enderror"
-                            type="text" name="tinggi" id="tinggi" value="{{ old('tinggi') }}">
-                            @error('tinggi')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
                              <label for="tinggi_badan">Tinggi Badan</label>
                             <input
-                            class="form-control @error('berat') is-invalid @enderror"
-                            type="text" name="berat" id="berat" value="{{ old('berat') }}">
-                            @error('berat')
+                            class="form-control @error('tinggi_badan') is-invalid @enderror"
+                            type="text" name="tinggi_badan" id="tinggi_badan" value="{{ old('tinggi_badan') }}">
+                            @error('tinggi_badan')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
                              <label for="berat_badan">Berat Badan</label>
+                            <input
+                            class="form-control @error('berat_badan') is-invalid @enderror"
+                            type="text" name="berat_badan" id="berat_badan" value="{{ old('berat_badan') }}">
+                            @error('berat_badan')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                             <label for="umur">Umur</label>
                             <input
                             class="form-control @error('umur') is-invalid @enderror"
                             type="text" name="umur" id="umur" value="{{ old('umur') }}">
@@ -190,21 +200,11 @@
                         </div>
 
                         <div class="form-group">
-                             <label for="umur">Umur</label>
-                            <input
-                            class="form-control @error('riwayat_penyakit') is-invalid @enderror"
-                            type="text" name="riwayat_penyakit" id="riwayat_penyakit" value="{{ old('riwayat_penyakit') }}">
-                            @error('riwayat_penyakit')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
                              <label for="riwayat_peny">Riwayat Penyakit</label>
                             <input
-                            class="form-control @error('cita_cita') is-invalid @enderror"
-                            type="text" name="cita_cita" id="cita_cita" value="{{ old('cita_cita') }}">
-                            @error('cita_cita')
+                            class="form-control @error('riwayat_peny') is-invalid @enderror"
+                            type="text" name="riwayat_peny" id="riwayat_peny" value="{{ old('riwayat_peny') }}">
+                            @error('riwayat_peny')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -212,9 +212,9 @@
                         <div class="form-group">
                              <label for="cita_cita">Cita-cita</label>
                             <input
-                            class="form-control @error('hobi') is-invalid @enderror"
-                            type="text" name="hobi" id="hobi" value="{{ old('hobi') }}">
-                            @error('hobi')
+                            class="form-control @error('cita_cita') is-invalid @enderror"
+                            type="text" name="cita_cita" id="cita_cita" value="{{ old('cita_cita') }}">
+                            @error('cita_cita')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -253,8 +253,8 @@
                              <label for="status_anak">Status</label>
                             <input
                             class="form-control @error('status') is-invalid @enderror"
-                            type="text" name="status" id="status" value="{{ old('status') }}">
-                            @error('status')
+                            type="text" name="status_anak" id="status_anak" value="{{ old('status_anak') }}">
+                            @error('status_anak')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -262,9 +262,9 @@
                         <div class="form-group">
                              <label for="gol_darah">Golongan Darah</label>
                             <input
-                            class="form-control @error('golongan_darah') is-invalid @enderror"
-                            type="text" name="golongan_darah" id="golongan_darah" value="{{ old('golongan_darah') }}">
-                            @error('golongan_darah')
+                            class="form-control @error('gol_darah') is-invalid @enderror"
+                            type="text" name="gol_darah" id="gol_darah" value="{{ old('gol_darah') }}">
+                            @error('gol_darah')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -302,9 +302,9 @@
                         <div class="form-group">
                             <label for="pel_disukai">Pelajaran Yang Disukai</label>
                            <input
-                           class="form-control @error('bakat') is-invalid @enderror"
-                           type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                           @error('bakat')
+                           class="form-control @error('pel_disukai') is-invalid @enderror"
+                           type="text" name="pel_disukai" id="pel_disukai" value="{{ old('pel_disukai') }}">
+                           @error('pel_disukai')
                            <div class="text-danger">{{ $message }}</div>
                            @enderror
                        </div>
@@ -312,9 +312,9 @@
                         <div class="form-group">
                             <label for="nik">NIK</label>
                         <input
-                        class="form-control @error('bakat') is-invalid @enderror"
-                        type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                        @error('bakat')
+                        class="form-control @error('nik') is-invalid @enderror"
+                        type="text" name="nik" id="nik" value="{{ old('nik') }}">
+                        @error('nik')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -322,9 +322,9 @@
                         <div class="form-group">
                             <label for="nisn">NISN</label>
                         <input
-                        class="form-control @error('bakat') is-invalid @enderror"
-                        type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                        @error('bakat')
+                        class="form-control @error('nisn') is-invalid @enderror"
+                        type="text" name="nisn" id="nisn" value="{{ old('nisn') }}">
+                        @error('nisn')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -332,9 +332,9 @@
                             <div class="form-group">
                                 <label for="ijazah">Ijazah</label>
                             <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
+                            class="form-control @error('ijazah') is-invalid @enderror"
+                            type="text" name="ijazah" id="ijazah" value="{{ old('ijazah') }}">
+                            @error('ijazah')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -342,9 +342,9 @@
                             <div class="form-group">
                                 <label for="akta">Akta</label>
                             <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
+                            class="form-control @error('akta') is-invalid @enderror"
+                            type="text" name="akta" id="akta" value="{{ old('akta') }}">
+                            @error('akta')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -352,29 +352,29 @@
                                 
                         <div class="form-group">
                             <label for="foto_diri">Foto Diri</label>
-                            <input type="file" name="gambar" 
-                            class="form-control @error('fto_kk') is-invalid @enderror"
-                            type="text" name="fto_kk" id="fto_kk" value="{{ old('fto_kk') }}">
-                            @error('fto_kk')
+                            <input type="file" name="foto_diri" 
+                            class="form-control @error('foto_diri') is-invalid @enderror"
+                            type="text" name="foto_diri" id="foto_diri" value="{{ old('foto_diri') }}">
+                            @error('foto_diri')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                             <div class="form-group">
                                 <label for="foto_rumah">Foto Rumah</label>
-                                <input type="file" name="gambar" 
-                                class="form-control @error('fto_kk') is-invalid @enderror"
-                                type="text" name="fto_kk" id="fto_kk" value="{{ old('fto_kk') }}">
-                                @error('fto_kk')
+                                <input type="file" name="foto_rumah" 
+                                class="form-control @error('foto_rumah') is-invalid @enderror"
+                                type="text" name="foto_rumah" id="foto_rumah" value="{{ old('foto_rumah') }}">
+                                @error('foto_rumah')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
                         <div class="form-group">
-                            <label for="foto_kel">Foto KARTU Keluarga</label><br>
-                           <input type="file" name="gambar" 
-                           class="form-control @error('fto_kk') is-invalid @enderror"
-                           type="text" name="fto_kk" id="fto_kk" value="{{ old('fto_kk') }}">
-                           @error('fto_kk')
+                            <label for="foto_kel">Foto Keluarga</label><br>
+                           <input type="file" name="foto_kel" 
+                           class="form-control @error('foto_kel') is-invalid @enderror"
+                           type="text" name="foto_kel" id="foto_kel" value="{{ old('foto_kel') }}">
+                           @error('foto_kel')
                            <div class="text-danger">{{ $message }}</div>
                            @enderror
                        </div>
@@ -387,70 +387,69 @@
 
                             <div class="form-group">
                                 <label for="kis">Kartu Indonesia Sehat</label>
-                            <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
+                                <input type="file" name="kis" 
+                                class="form-control @error('kis') is-invalid @enderror"
+                                type="text" name="kis" id="kis" value="{{ old('kis') }}">
+                                @error('kis')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
                         <div class="form-group">
                                 <label for="kip">Kartu Indonesia Pintar</label>
-                            <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                                <input type="file" name="kip" 
+                                class="form-control @error('kip') is-invalid @enderror"
+                                type="text" name="kip" id="foto_kel" value="{{ old('kip') }}">
+                                @error('kip')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
 
                         <div class="form-group">
                                 <label for="sks">Surat Keterangan Sehat</label>
-                            <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                                <input type="file" name="sks" 
+                                class="form-control @error('sks') is-invalid @enderror"
+                                type="text" name="sks" id="sks" value="{{ old('sks') }}">
+                                @error('sks')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
 
                             <div class="form-group">
                                 <label for="skb">Surat Keterangan Baik</label>
-                            <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                                <input type="file" name="skb" 
+                                class="form-control @error('skb') is-invalid @enderror"
+                                type="text" name="skb" id="skb" value="{{ old('skb') }}">
+                                @error('skb')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
 
                             <div class="form-group">
                                 <label for="spp_sek">SPP Sekolah</label>
-                            <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                             <input type="file" name="foto_kel" 
+                           class="form-control @error('foto_kel') is-invalid @enderror"
+                           type="text" name="foto_kel" id="foto_kel" value="{{ old('foto_kel') }}">
+                           @error('foto_kel')
+                           <div class="text-danger">{{ $message }}</div>
+                           @enderror
+                       </div>
 
                             <div class="form-group">
                                 <label for="sktm">Surat Keterangan Tidak Mampu</label>
-                            <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                                <input type="file" name="sktm" 
+                                class="form-control @error('sktm') is-invalid @enderror"
+                                type="text" name="sktm" id="sktm" value="{{ old('sktm') }}">
+                                @error('sktm')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
 
                             <div class="form-group">
                                 <label for="biaya_saudara">Biaya Saudara</label>
                             <input
-                            class="form-control @error('bakat') is-invalid @enderror"
-                            type="text" name="bakat" id="bakat" value="{{ old('bakat') }}">
-                            @error('bakat')
+                            class="form-control @error('biaya_saudara') is-invalid @enderror"
+                            type="text" name="biaya_saudara" id="biaya_saudara" value="{{ old('biaya_saudara') }}">
+                            @error('biaya_saudara')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -465,9 +464,9 @@
                         <div class="form-group">
                              <label for="nama_ayh">Nama Ayah</label>
                             <input
-                            class="form-control @error('nama_ayah') is-invalid @enderror"
-                            type="text" name="nama_ayah" id="nama_ayah" value="{{ old('nama_ayah') }}">
-                            @error('nama_ayah')
+                            class="form-control @error('nama_ayh') is-invalid @enderror"
+                            type="text" name="nama_ayh" id="nama_ayh" value="{{ old('nama_ayh') }}">
+                            @error('nama_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -483,11 +482,11 @@
                        </div>
 
                         <div class="form-group">
-                             <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+                             <label for="pek_ayah">Pekerjaan Ayah</label>
                             <input
-                            class="form-control @error('pekerjaan_ayah') is-invalid @enderror"
-                            type="text" name="pekerjaan_ayah" id="pekerjaan_ayah" value="{{ old('pekerjaan_ayah') }}">
-                            @error('pekerjaan_ayah')
+                            class="form-control @error('pek_ayah') is-invalid @enderror"
+                            type="text" name="pek_ayah" id="pek_ayah" value="{{ old('pek_ayah') }}">
+                            @error('pek_ayah')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -503,11 +502,11 @@
                        </div>
 
                         <div class="form-group">
-                             <label for="asal_ayah">Asal Ayah</label>
+                             <label for="asal_ayh">Asal Ayah</label>
                             <input
-                            class="form-control @error('asal_ayah') is-invalid @enderror"
-                            type="text" name="asal_ayah" id="asal_ayah" value="{{ old('asal_ayah') }}">
-                            @error('asal_ayah')
+                            class="form-control @error('asal_ayh') is-invalid @enderror"
+                            type="text" name="asal_ayh" id="asal_ayh" value="{{ old('asal_ayh') }}">
+                            @error('asal_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -525,9 +524,9 @@
                         <div class="form-group">
                              <label for="pend_ayh">Pendidikan Ayah</label>
                             <input
-                            class="form-control @error('lulusan_ayah') is-invalid @enderror"
-                            type="text" name="lulusan_ayah" id="lulusan_ayah" value="{{ old('lulusan_ayah') }}">
-                            @error('lulusan_ayah')
+                            class="form-control @error('pend_ayh') is-invalid @enderror"
+                            type="text" name="pend_ayh" id="pend_ayh" value="{{ old('pend_ayh') }}">
+                            @error('pend_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -536,9 +535,9 @@
                         <div class="form-group">
                             <label for="pend_ibu">Pendidikan Ibu</label>
                            <input
-                           class="form-control @error('lulusan_ibu') is-invalid @enderror"
-                           type="text" name="lulusan_ibu" id="lulusan_ibu" value="{{ old('lulusan_ibu') }}">
-                           @error('lulusan_ibu')
+                           class="form-control @error('pend_ibu') is-invalid @enderror"
+                           type="text" name="pend_ibu" id="pend_ibu" value="{{ old('pend_ibu') }}">
+                           @error('pend_ibu')
                            <div class="text-danger">{{ $message }}</div>
                            @enderror
                        </div>
@@ -546,9 +545,9 @@
                             <div class="form-group">
                                 <label for="tempat_lahir_ayh">Tempat Lahir Ayah</label>
                             <input type="date"
-                            class="form-control @error('ttl_ayah') is-invalid @enderror"
-                            type="text" name="ttl_ayah" id="ttl_ayah" value="{{ old('ttl_ayah') }}">
-                            @error('ttl_ayah')
+                            class="form-control @error('tempat_lahir_ayh') is-invalid @enderror"
+                            type="text" name="tempat_lahir_ayh" id="tempat_lahir_ayh" value="{{ old('tempat_lahir_ayh') }}">
+                            @error('tempat_lahir_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -556,9 +555,9 @@
                             <div class="form-group">
                                 <label for="tempat_lahir_ibu">Tempat Lahir Ibu</label>
                             <input type="date"
-                            class="form-control @error('ttl_ayah') is-invalid @enderror"
-                            type="text" name="ttl_ayah" id="ttl_ayah" value="{{ old('ttl_ayah') }}">
-                            @error('ttl_ayah')
+                            class="form-control @error('tempat_lahir_ibu') is-invalid @enderror"
+                            type="text" name="tempat_lahir_ibu" id="tempat_lahir_ibu" value="{{ old('tempat_lahir_ibu') }}">
+                            @error('tempat_lahir_ibu')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -566,9 +565,9 @@
                             <div class="form-group">
                                 <label for="tgl_lahir_ayh">Tanggal Lahir Ayah</label>
                             <input type="date"
-                            class="form-control @error('ttl_ayah') is-invalid @enderror"
-                            type="text" name="ttl_ayah" id="ttl_ayah" value="{{ old('ttl_ayah') }}">
-                            @error('ttl_ayah')
+                            class="form-control @error('tgl_lahir_ayh') is-invalid @enderror"
+                            type="text" name="tgl_lahir_ayh" id="tgl_lahir_ayh" value="{{ old('tgl_lahir_ayh') }}">
+                            @error('tgl_lahir_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -576,9 +575,9 @@
                         <div class="form-group">
                             <label for="tgl_lahir_ibu">Tanggal Lahir Ibu</label>
                         <input type="date"
-                        class="form-control @error('ttl_ayah') is-invalid @enderror"
-                        type="text" name="ttl_ayah" id="ttl_ayah" value="{{ old('ttl_ayah') }}">
-                        @error('ttl_ayah')
+                        class="form-control @error('tgl_lahir_ibu') is-invalid @enderror"
+                        type="text" name="tgl_lahir_ibu" id="tgl_lahir_ibu" value="{{ old('tgl_lahir_ibu') }}">
+                        @error('tgl_lahir_ibu')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -590,9 +589,9 @@
                         <div class="form-group">
                              <label for="agama_ayh">Agama Ayah</label>
                             <input
-                            class="form-control @error('agama_ayah') is-invalid @enderror"
-                            type="text" name="agama_ayah" id="agama_ayah" value="{{ old('agama_ayah') }}">
-                            @error('agama_ayah')
+                            class="form-control @error('agama_ayh') is-invalid @enderror"
+                            type="text" name="agama_ayh" id="agama_ayh" value="{{ old('agama_ayh') }}">
+                            @error('agama_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -611,9 +610,9 @@
                         <div class="form-group">
                              <label for="usia_ayh">Usia Ayah</label>
                             <input
-                            class="form-control @error('usia_ayah') is-invalid @enderror"
-                            type="text" name="usia_ayah" id="usia_ayah" value="{{ old('usia_ayah') }}">
-                            @error('usia_ayah')
+                            class="form-control @error('usia_ayh') is-invalid @enderror"
+                            type="text" name="usia_ayh" id="usia_ayh" value="{{ old('usia_ayh') }}">
+                            @error('usia_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -634,9 +633,9 @@
                         <div class="form-group">
                              <label for="no_telp_ayh">Nomor Telepon Ayah</label>
                             <input
-                            class="form-control @error('no_telp_ayah') is-invalid @enderror"
-                            type="text" name="no_telp_ayah" id="no_telp_ayah" value="{{ old('no_telp_ayah') }}">
-                            @error('no_telp_ayah')
+                            class="form-control @error('no_telp_ayh') is-invalid @enderror"
+                            type="text" name="no_telp_ayh" id="no_telp_ayh" value="{{ old('no_telp_ayh') }}">
+                            @error('no_telp_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -652,10 +651,10 @@
                        </div>
 
                         <div class="form-group">
-                             <label for="penghasilan_ayah">Penghasilan/Bulan Ayah</label>
+                             <label for="peng_ayh">Penghasilan/Bulan Ayah</label>
                             <input
-                            class="form-control @error('penghasilan_ayah') is-invalid @enderror"
-                            type="text" name="penghasilan_ayah" id="penghasilan_ayah" value="{{ old('penghasilan_ayah') }}">
+                            class="form-control @error('peng_ayh') is-invalid @enderror"
+                            type="text" name="peng_ayh" id="peng_ayh" value="{{ old('peng_ayh') }}">
                             @error('peng_ayh')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -664,9 +663,9 @@
                         <div class="form-group">
                             <label for="peng_ibu">Penghasilan/Bulan Ibu</label>
                            <input
-                           class="form-control @error('penghasilan_ibu') is-invalid @enderror"
-                           type="text" name="penghasilan_ibu" id="penghasilan_ibu" value="{{ old('penghasilan_ibu') }}">
-                           @error('penghasilan_ibu')
+                           class="form-control @error('peng_ibu') is-invalid @enderror"
+                           type="text" name="peng_ibu" id="peng_ibu" value="{{ old('peng_ibu') }}">
+                           @error('peng_ibu')
                            <div class="text-danger">{{ $message }}</div>
                            @enderror
                        </div>
@@ -681,11 +680,6 @@
 
                         
 
-                        <h3>Script Upload File</h3>
-                            <form action="upload" method="post" enctype="multipart/form-data">
-                                {{ csrf_field() }}
-                                <input type="file" name="gambar">
-                                <Br>
 
                     <button class="btn btn-primary" type="submit">Daftar</button>
                 </form>

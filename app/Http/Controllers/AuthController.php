@@ -26,7 +26,8 @@ class AuthController extends Controller
     {
         $rules = [
             'email'                 => 'required|email',
-            'password'              => 'required|string'
+            'password'              => 'required|string',
+            'no_telp'               => 'required|string'
         ];
  
         $messages = [
