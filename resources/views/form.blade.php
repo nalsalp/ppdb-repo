@@ -684,7 +684,10 @@
                         <h3>Script Upload File</h3>
                             <form action="upload" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                <input type="file" name="gambar">
+                                <div class="mb-3">
+                                     <label for="gambar" class="form-label">Upload gambar</label>
+                                    <input class="form-control" type="file" id="gambar" multiple>
+                                </div>
                                 <Br>
 
                     <button class="btn btn-primary" type="submit">Daftar</button>

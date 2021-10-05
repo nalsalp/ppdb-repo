@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/dashboard_admin', function () {
+    return view('dashboard_admin');
+});
 Route::get('/form', function () {
     return view('form');
 });
