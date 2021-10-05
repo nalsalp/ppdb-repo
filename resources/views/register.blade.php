@@ -50,6 +50,16 @@
                         <label for=""><strong>Konfirmasi Password</strong></label>
                         <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
                     </div>
+                    <div class="form-group">
+                            <label for="foto_diri"><strong>Foto Bukti Pembayaran</strong></label>
+                            <input type="file" name="gambar" 
+                            class="form-control @error('fto_bukti') is-invalid @enderror"
+                            type="text" name="fto_bukti" id="fto_bukti" value="{{ old('fto_bukti') }}">
+                            @error('fto_bukti')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary btn-block">Register</button>

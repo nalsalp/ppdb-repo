@@ -61,10 +61,12 @@
 
                         <div class="form-group">
                              <label for="jk">Jenis Kelamin</label>
-                            <input
-                            class="form-control @error('email') is-invalid @enderror"
-                            type="text" name="email" id="email" value="{{ old('email') }}">
-                            @error('email')
+                            <select class="form-control @error('jk') is-invalid @enderror" name="jk" id="jk">
+                             <option value="{{ old('jk') }}">{{ old('jk') }}</option>
+                             <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                            </select>
+                            @error('Jenis-kelamin')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -159,15 +161,22 @@
                             @enderror
                         </div>
 
+                
                         <div class="form-group">
-                             <label for="agama">Agama</label>
-                            <input
-                            class="form-control @error('tinggi') is-invalid @enderror"
-                            type="text" name="tinggi" id="tinggi" value="{{ old('tinggi') }}">
-                            @error('tinggi')
+                             <label for="j_2">Agama</label>
+                             <select class="form-control @error('agama') is-invalid @enderror" name="agama" id="agama">
+                             <option value="{{ old('agama') }}">{{ old('agama') }}</option>
+                                 <option value="TB">Kristen</option>
+                                 <option value="MM">Katholik</option>
+                                 <option value="RPL">Islam</option>
+                                 <option value="BKP">Hindu</option>
+                                 <option value="TKTO">Budha</option>
+                             </select>
+                            @error('jurusan2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+
 
                         <div class="form-group">
                              <label for="tinggi_badan">Tinggi Badan</label>
@@ -359,6 +368,7 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+
                             <div class="form-group">
                                 <label for="foto_rumah">Foto Rumah</label>
                                 <input type="file" name="gambar" 
@@ -378,13 +388,6 @@
                            <div class="text-danger">{{ $message }}</div>
                            @enderror
                        </div>
-                       
-
-                       
-
-
-
-
                             <div class="form-group">
                                 <label for="kis">Kartu Indonesia Sehat</label>
                             <input
@@ -393,8 +396,7 @@
                             @error('bakat')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
-                        </div>
-
+                           </div>
                         <div class="form-group">
                                 <label for="kip">Kartu Indonesia Pintar</label>
                             <input
@@ -454,14 +456,6 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-
-
-
-                    
-
-
-
-
                         <div class="form-group">
                              <label for="nama_ayh">Nama Ayah</label>
                             <input
@@ -532,7 +526,6 @@
                             @enderror
                         </div>
 
-                        
                         <div class="form-group">
                             <label for="pend_ibu">Pendidikan Ibu</label>
                            <input
@@ -583,10 +576,6 @@
                         @enderror
                     </div>
 
-                            
-
-                
-
                         <div class="form-group">
                              <label for="agama_ayh">Agama Ayah</label>
                             <input
@@ -629,8 +618,6 @@
                        </div>
 
 
-                        
-
                         <div class="form-group">
                              <label for="no_telp_ayh">Nomor Telepon Ayah</label>
                             <input
@@ -670,23 +657,13 @@
                            <div class="text-danger">{{ $message }}</div>
                            @enderror
                        </div>
-
-
-                        
-                      
-
                        
-
-                        
-
-                        
-
                         <h3>Script Upload File</h3>
                             <form action="upload" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <input type="file" name="gambar">
-                                <Br>
-
+                                <br>
+                                <br>
                     <button class="btn btn-primary" type="submit">Daftar</button>
                 </form>
                     </div>

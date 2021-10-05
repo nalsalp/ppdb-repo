@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   PPDB
+                  <h5>PPDB</5> 
                 </div>
 
                 <div class="links">
