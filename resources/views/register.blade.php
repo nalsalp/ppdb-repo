@@ -14,7 +14,7 @@
                 <div class="card-header">
                     <h3 class="text-center">Form Register</h3>
                 </div>
-                <form action="{{ route('register') }}" method="post">
+                <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     @if(session('errors'))
@@ -49,6 +49,10 @@
                     <div class="form-group">
                         <label for=""><strong>Konfirmasi Password</strong></label>
                         <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for=""><strong>Bukti Pembayaran</strong></label>
+                        <input type="file" name="fto_bukti" class="form-control" placeholder="fto_bukti">
                     </div>
                 </div>
                 <div class="card-footer">
