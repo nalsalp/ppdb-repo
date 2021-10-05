@@ -56,7 +56,7 @@ class AuthController extends Controller
             return redirect()->route('home');
  
         } else {
-            
+
             Session::flash('error', 'Email atau password salah');
             return redirect()->route('login');
         }
@@ -125,5 +125,8 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
  
- 
+    public function tampil(){
+        $user = User::all();
+        return view('lihat',['user'=>$user]);
+    }
 }

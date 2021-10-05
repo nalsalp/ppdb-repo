@@ -23,17 +23,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-=======
 Route::get('/form', 'FormController@form');
 
 Route::post('/proses', 'FormController@proses');
->>>>>>> 083402fd6c8ec1f3412e1b198bed17e9f4b369ec
 
 
 Route::get('/calonsiswa','CalonsiswaController@index')->name('calonsiswa.index');
 Route::get('/calonsiswa/create','CalonsiswaController@create')->name('calonsiswa.create');
 Route::post('/calonsiswa','CalonsiswaController@store')->name('calonsiswa.store');
+Route::get('/tampil','AuthController@tampil')->name('dataregis');
 
 
 Route::get('login', 'AuthController@showFormLogin')->name('login');
