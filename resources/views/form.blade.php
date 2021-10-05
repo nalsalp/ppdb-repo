@@ -16,6 +16,7 @@
                 <div class="col-lg-6">
                     <div class="card mt-5">
                         <div class="card-body">
+                     
                             <center>
                             <h1>Form Pendaftaran Calon Siswa Peserta Didik Baru</h1>
                             <h3>SMK BAGIMU NEGERIKU SEMARANG</h3>

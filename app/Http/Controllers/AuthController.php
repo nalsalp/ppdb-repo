@@ -74,7 +74,8 @@ class AuthController extends Controller
         $rules = [
             'name'                  => 'required|min:3|max:35',
             'email'                 => 'required|email|unique:users,email',
-            'password'              => 'required|confirmed'
+            'password'              => 'required|confirmed',
+            'fto_bukti'             => 'required'
         ];
  
         $messages = [
@@ -85,7 +86,8 @@ class AuthController extends Controller
             'email.email'           => 'Email tidak valid',
             'email.unique'          => 'Email sudah terdaftar',
             'password.required'     => 'Password wajib diisi',
-            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password'
+            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password',
+            'fto_bukti'             => 'foto harus di upload'
         ];
  
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -93,13 +95,20 @@ class AuthController extends Controller
         if($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput($request->all);
         }
- 
+        
+        $fto_bukti=$request->file('fto_bukti');
+        $filename = $fto_bukti->getClientOriginalExtension();
+        $destination = public_path('img/buktitransfer/'.$filename);
+
         $user = new User;
         $user->name = ucwords(strtolower($request->name));
         $user->email = strtolower($request->email);
         $user->password = Hash::make($request->password);
         $user->no_telp =$request->no_telp;
         $user->email_verified_at = \Carbon\Carbon::now();
+        $user->fto_bukti =$request->$fto_bukti;
+       
+
         $simpan = $user->save();
  
         if($simpan){
