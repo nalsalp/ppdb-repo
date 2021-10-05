@@ -320,6 +320,41 @@
                             </form>
 
                         </div>
+<<<<<<< HEAD
+=======
+
+                        <div class="form-group">
+                            <label for="peng_ibu">Penghasilan/Bulan Ibu</label>
+                           <input
+                           class="form-control @error('penghasilan_ibu') is-invalid @enderror"
+                           type="text" name="penghasilan_ibu" id="penghasilan_ibu" value="{{ old('penghasilan_ibu') }}">
+                           @error('penghasilan_ibu')
+                           <div class="text-danger">{{ $message }}</div>
+                           @enderror
+                       </div>
+
+
+                        
+                      
+
+                       
+
+                        
+
+                        
+
+                        <h3>Script Upload File</h3>
+                            <form action="upload" method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <div class="mb-3">
+                                     <label for="gambar" class="form-label">Upload gambar</label>
+                                    <input class="form-control" type="file" id="gambar" multiple>
+                                </div>
+                                <Br>
+
+                    <button class="btn btn-primary" type="submit">Daftar</button>
+                </form>
+>>>>>>> dd4ab1b02cacb67a03364c0ebd08837449e382e3
                     </div>
                 </div>
             </div>

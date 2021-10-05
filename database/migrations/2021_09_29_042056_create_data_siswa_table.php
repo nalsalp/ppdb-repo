@@ -77,6 +77,7 @@ class CreateDataSiswaTable extends Migration
             $table->string('no_telp_ayh');
             $table->string('peng_ayh');
             $table->string('peng_ibu');
+            $table->string('image');
             $table->timestamps();
         });
     }

@@ -272,7 +272,7 @@
 
                             </table>
  
-                        <a href="/form" class="btn btn-dark">Kembali</a>
+                        <a href="/Form" class="btn btn-dark">Kembali</a>
                     </div>
                 </div>
             </div>
