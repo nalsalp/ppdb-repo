@@ -50,8 +50,10 @@
                     </div>
                 </div>
                 <div class="card-footer">
+                <a href="form.blade.php">
                     <button type="submit" class="btn btn-primary btn-block">Log In</button>
                     <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Register</a> sekarang!</p>
+                  </a>
                 </div>
                 </form>
             </div>

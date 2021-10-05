@@ -51,13 +51,12 @@ class AuthController extends Controller
  
         Auth::attempt($data);
  
-        if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
-            //Login Success
+        if (Auth::check()) { 
+
             return redirect()->route('home');
  
-        } else { // false
- 
-            //Login Fail
+        } else {
+            
             Session::flash('error', 'Email atau password salah');
             return redirect()->route('login');
         }
@@ -97,8 +96,9 @@ class AuthController extends Controller
         }
         
         $fto_bukti=$request->file('fto_bukti');
-        $filename = $fto_bukti->getClientOriginalExtension();
-        $destination = public_path('img/buktitransfer/'.$filename);
+        $filename = $fto_bukti->getClientOriginalName();
+        $destination = public_path('img/buktitransfer');
+        $fto_bukti->move($destination,$filename);
 
         $user = new User;
         $user->name = ucwords(strtolower($request->name));
@@ -106,8 +106,7 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->no_telp =$request->no_telp;
         $user->email_verified_at = \Carbon\Carbon::now();
-        $user->fto_bukti =$request->$fto_bukti;
-       
+        $user->fto_bukti =$filename;
 
         $simpan = $user->save();
  
