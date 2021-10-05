@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::get('/calonsiswa','CalonsiswaController@index')->name('calonsiswa.index');
 Route::get('/calonsiswa/create','CalonsiswaController@create')->name('calonsiswa.create');
 Route::post('/calonsiswa','CalonsiswaController@store')->name('calonsiswa.store');
+
+
 Route::get('login', 'AuthController@showFormLogin')->name('login');
 Route::post('login', 'AuthController@login');
 Route::get('register', 'AuthController@showFormRegister')->name('register');
