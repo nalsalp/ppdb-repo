@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App;
 
 use Illuminate\Http\Request;
 use App\Calonsiswa;
@@ -63,7 +63,7 @@ class CalonsiswaController extends Controller
 
         ]);
         dump($validateData);
-        $calonsiswa = new Calonsiswa();
+        $calonsiswa = new CalonsiswaController();
         $calonsiswa->nik = $validateData['nik'] ;
         $calonsiswa->nama = $validateData['nama'] ;
         $calonsiswa->nama_panggilan = $validateData['nama_panggilan'] ;
