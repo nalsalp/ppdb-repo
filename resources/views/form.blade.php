@@ -354,7 +354,7 @@
                             <label for="foto_diri">Foto Diri</label>
                             <input type="file" name="gambar" 
                             class="form-control @error('fto_kk') is-invalid @enderror"
-                            type="text" name="fto_kk" id="fto_kk" value="{{ old('fto_kk') }}">
+                            type="text" name="fto_kk" id="fto_kk" value="{{ ('fto_kk') }}" multiple>
                             @error('fto_kk')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -363,7 +363,7 @@
                                 <label for="foto_rumah">Foto Rumah</label>
                                 <input type="file" name="gambar" 
                                 class="form-control @error('fto_kk') is-invalid @enderror"
-                                type="text" name="fto_kk" id="fto_kk" value="{{ old('fto_kk') }}">
+                                type="text" name="fto_kk" id="fto_kk" value="{{ ('fto_kk') }}" multiple>
                                 @error('fto_kk')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -373,7 +373,7 @@
                             <label for="foto_kel">Foto KARTU Keluarga</label><br>
                            <input type="file" name="gambar" 
                            class="form-control @error('fto_kk') is-invalid @enderror"
-                           type="text" name="fto_kk" id="fto_kk" value="{{ old('fto_kk') }}">
+                           type="text" name="fto_kk" id="fto_kk" value="{{ ('fto_kk') }}" multiple>
                            @error('fto_kk')
                            <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -671,23 +671,7 @@
                            @enderror
                        </div>
 
-
-                        
                       
-
-                       
-
-                        
-
-                        
-
-                        <h3>Script Upload File</h3>
-                            <form action="upload" method="post" enctype="multipart/form-data">
-                                {{ csrf_field() }}
-                                <div class="mb-3">
-                                     <label for="gambar" class="form-label">Upload gambar</label>
-                                    <input class="form-control" type="file" id="gambar" multiple>
-                                </div>
                                 <Br>
 
                     <button class="btn btn-primary" type="submit">Daftar</button>
