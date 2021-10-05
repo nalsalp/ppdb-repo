@@ -23,6 +23,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/form', 'FormController@form');
+
+Route::post('/proses', 'FormController@proses');
+
+
 Route::get('/calonsiswa','CalonsiswaController@index')->name('calonsiswa.index');
 Route::get('/calonsiswa/create','CalonsiswaController@create')->name('calonsiswa.create');
 Route::post('/calonsiswa','CalonsiswaController@store')->name('calonsiswa.store');
@@ -39,3 +44,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', 'AuthController@logout')->name('logout');
  
 });
+
