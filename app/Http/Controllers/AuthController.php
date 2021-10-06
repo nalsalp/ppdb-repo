@@ -9,6 +9,9 @@ use Validator;
 use Hash;
 use Session;
 use App\User;
+
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
  
 
 class AuthController extends Controller
@@ -128,5 +131,10 @@ class AuthController extends Controller
     public function tampil(){
         $user = User::all();
         return view('lihat',['user'=>$user]);
+    }
+
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'Register.xlsx');
     }
 }
