@@ -11,6 +11,10 @@ use Hash;
 use Session;
 use App\User;
 
+use App\Exports\UserExport;
+use Maatwebsite\Excel\Facades\Export;
+use App\Http\Controllers\Controller;
+
  
 
 class AuthController extends Controller
@@ -130,6 +134,9 @@ class AuthController extends Controller
  
     public function tampil(){
         $user = User::all();
-        return view('lihat',['user'=>$user]);
+        return view('lihat',compact('user'));
+    }
+    public function userexport(){
+        return Excel::download(new UserExport,'user.xlsx');
     }
 }
