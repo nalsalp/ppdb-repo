@@ -32,6 +32,7 @@ Route::post('/proses', 'FormController@proses');
 Route::get('/calonsiswa','CalonsiswaController@index')->name('calonsiswa.index');
 Route::get('/calonsiswa/create','CalonsiswaController@create')->name('calonsiswa.create');
 Route::post('/calonsiswa','CalonsiswaController@store')->name('calonsiswa.store');
+Route::get('/tampil','AuthController@tampil')->name('dataregis');
 
 
 Route::get('login', 'AuthController@showFormLogin')->name('login');

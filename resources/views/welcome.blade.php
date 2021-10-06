@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   PPDB
+                  <h5>PPDB</5> 
                 </div>
             <p><b>Selamat datang di PPDB SMK Bagimu Negeriku</b></p>
     </body>

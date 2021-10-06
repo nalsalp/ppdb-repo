@@ -60,8 +60,9 @@ class CalonsiswaController extends Controller
             'no_telp_ibu'=>'required',
             'penghasilan_ibu'=>'required',
             'fto_kk'=>'required',
-
+            'image' => 'image|file|max:10'
         ]);
+        return $request-> file('image')->store('post-image');
         dump($validateData);
         $calonsiswa = new CalonsiswaController();
         $calonsiswa->nik = $validateData['nik'] ;
