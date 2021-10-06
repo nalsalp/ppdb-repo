@@ -9,17 +9,17 @@
 <body>
    
     <h1>Data Register</h1>
-    <a href="{{ route('exportuser') }}" class="btn"><button>export</button></a><br>
+    <a href="{{ route('export') }}" >Export</a><br>
     @php
-        $i=1
+        $i=1;
     @endphp
     @foreach ($user as $tampil)
-    {{ $i++ }}
+    <b>{{ $i++ }}</b>
     <p>Nama = {{ $tampil->name }}</p>
     <p>Email = {{ $tampil->email }}</p>
     <p>Telp = {{ $tampil->no_telp }}</p>
     <img src="{{ asset('public/img/buktitransfer/'.$tampil->fto_bukti)}}" alt="Bukti Transfer {{ $tampil->name }}" class="img-responsive img-circle user-photo">
-    <p>Waktu Daftar = {{ $tampil->created_at}}</p><br><br>
+    <p>Waktu Daftar = {{ $tampil->created_at}}</p><br>
     
     @endforeach
 </body>

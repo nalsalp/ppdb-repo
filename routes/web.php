@@ -29,6 +29,7 @@ Route::get('/', function () {
 Route::get('/form', 'FormController@form');
 
 Route::post('/proses', 'FormController@proses');
+Route::get('/export', 'AuthController@export')->name('export');
 
 
 Route::get('/calonsiswa','CalonsiswaController@index')->name('calonsiswa.index');
@@ -50,5 +51,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::resource('admin', AdminController::class);
-Route::get('\exportuser', 'AuthController@userexport')->name('exportuser');
 
