@@ -139,4 +139,12 @@ class AuthController extends Controller
     {
         return Excel::download(new UsersExport, 'Register.xlsx');
     }
+
+    public function salah($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+       
+        return redirect('tampil')->with('success',' Penghapusan berhasil!');
+    }
 }

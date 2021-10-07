@@ -19,8 +19,14 @@
     <p>Email = {{ $tampil->email }}</p>
     <p>Telp = {{ $tampil->no_telp }}</p>
     <img src="{{ asset('public/img/buktitransfer/'.$tampil->fto_bukti)}}" alt="Bukti Transfer {{ $tampil->name }}" class="img-responsive img-circle user-photo">
-    <p>Waktu Daftar = {{ $tampil->created_at}}</p><br>
-    
+    <p>Waktu Daftar = {{ $tampil->created_at}}</p>
+    <a href="#">Benar</a>
+    <form method="POST" action="{{ url('user/salah', $tampil->id ) }}" onsubmit="return confirm('yakin hapus data?')">
+        @method('delete')
+        @csrf
+        <button class="btn btn-danger btn-sm">salah</button><br><br>
+            
+  
     @endforeach
 </body>
 </html>

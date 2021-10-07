@@ -30,6 +30,7 @@ Route::get('/form', 'FormController@form');
 
 Route::post('/proses', 'FormController@proses');
 Route::get('/export', 'AuthController@export')->name('export');
+Route::delete('/user/salah/{id}', [AuthController::class, 'salah']);
 
 
 Route::get('/calonsiswa','CalonsiswaController@index')->name('calonsiswa.index');
