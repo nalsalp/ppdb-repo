@@ -1,0 +1,13 @@
+// if($request->has('img_src')){
+//   $image = $request->file('img_src');
+//   $reImage = time() . '.' . $image->getClientOriginalExtension();
+//   $dest = public_path('/imgs');
+//   $image = move($dest, $reImage);
+//   // Save Data
+//   $image = new soal;
+//   $image->img_alt=$request->img_alt;
+//   $image->img_src=$reImage;
+//   $image->save();
+// }else{
+//   return "gagal!";
+// }

@@ -1,0 +1,36 @@
+/* css untuk halaman crud/adminz.blade.php */
+.title-admin{
+  margin-left: 70px;
+  margin-bottom: 40px;
+}
+.form-lol{
+  margin-left: 150px;
+}
+.form-lol .judul-tes, .nomor-soal{
+  width: 250px;
+}
+.form-lol #btn-simpan{
+  width: 130px;
+}
+.btnn-lol{
+  margin-left: 150px;
+  width: 130px;
+  margin-bottom: 90px;
+}
+
+
+/* css buat halaman layouts/admin.blade.php */
+.line123{
+  width: 1050px;
+  color: black;
+}
+#nava-brands{
+  text-align: left;
+}
+
+
+/* css untuk halaman akademik.blade.php */
+.card{
+  margin-left: 40px;
+  box-shadow: 3px 3px rgba(0,0,0,0.5);
+}
